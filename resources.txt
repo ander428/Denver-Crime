@@ -1,1 +1,5 @@
+Density Map:
 https://basemaptutorial.readthedocs.io/en/latest/basic_functions.html
+
+High res basemap:
+conda install basemap-data-hires
