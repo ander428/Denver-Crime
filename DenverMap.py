@@ -5,13 +5,15 @@ import matplotlib.pyplot as plt
 class DenverMap(Basemap):
     def __init__(self):
         self.map = Basemap(projection='lcc', resolution='h',
-                    lat_0=39.3, lon_0=-104.991,
-                    width=0.9E6, height=0.6E6)
+                    lat_0=39.75, lon_0=-104.791,
+                    width=5E4, height=3.5E4)
 
     def show(self):
-        self.map.readshapefile('./Data/roads', 'Streets',drawbounds = True, color='grey')
+        self.map.readshapefile('./Data/Roads/roads', 'Streets',
+            drawbounds = True, color='grey')
+        self.map.readshapefile('./Data/Neighborhoods/statistical_neighborhoods',
+            'Neighborhoods',drawbounds = True, color='red')
         plt.show()
 
-        # new line of code
 dm = DenverMap()
 dm.show()
