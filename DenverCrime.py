@@ -61,5 +61,7 @@ print("Done.")
 
 # Changes to predicting neighborhood by offense category
 # by switching the keys an values
+print("Predicting Neighborhood by Offense Category...")
 markov.learn(crimeByNID, ["OFFENSE_CATEGORY_ID", "NEIGHBORHOOD_ID"])
 prediction = markov.predict("burglary", "cbd") # example
+print("Done.")
