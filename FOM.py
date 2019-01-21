@@ -1,4 +1,4 @@
-# Matt Greenburg - 2255210
+# Matt Greenberg - 2255210
 # Joshua Anderson - 2270306
 # Eric Vela - 2277759
 #
