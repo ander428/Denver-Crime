@@ -3,25 +3,21 @@ import random as rand
 
 class FOM:
 
-    def __init__(self, data):
-        learn(data)
+    def __init__(self):
         self.memory = {}
+        self.predictions = []
 
-    def learn(data):
-        for x, y in data:
-            if x not in self.memory.keys():
-                memory[x] = []
-            self.memory[x].append(y)
+    def learn(self, dataFrame, columns):
+        self.memory = dict(zip(dataFrame[columns[0]], dataFrame[columns[1]]))
 
-    def choose(dict):
+    def choose(self):
         randVal = rand.random()
         total = 0
-        for key, value in dict.items():
-            total += value
-            if randVal <= total:
-                return key
+        for key, value in self.memory.items():
+            uniqueVals = value
+            print("Key:", key, "Value:", uniqueVals)
 
-    def nextWord(key):
+    def nextWord(self, key):
         values = self.memory[key]
         count = {}
         for i in values:
