@@ -1,8 +1,7 @@
 from mpl_toolkits.basemap import Basemap
 import matplotlib.pyplot as plt
 
-
-class DenverMap(Basemap):
+class DenverMap:
     def __init__(self):
         self.map = Basemap(projection='lcc', resolution='h',
                     lat_0=39.75, lon_0=-104.791,

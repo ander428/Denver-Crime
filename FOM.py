@@ -4,7 +4,7 @@ import random as rand
 class FOM:
 
     def __init__(self, data):
-        lean(data)
+        learn(data)
         self.memory = {}
 
     def learn(data):
