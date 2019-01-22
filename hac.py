@@ -5,11 +5,13 @@ import matplotlib.pyplot as plt
 from sklearn import cluster
 import scipy.cluster.hierarchy as shc
 
-prob = pd.read_csv('C:/Users/ericv/Desktop/crimeprob.csv')
+prob = pd.read_csv('crimeprob.csv')
 label = prob.values[::,0]
 prob = prob.drop(['neighborhood'], axis=1)
 
 #set up plot dendogram plot
 plt.figure(figsize=(12, 8))  
 plt.title("Dendrogram")  
+dend = shc.dendrogram(shc.linkage(prob, method='ward'), labels = label)
+plt.figure(figsize=(12, 8))  
 dend = shc.dendrogram(shc.linkage(prob, method='complete'), labels = label)
