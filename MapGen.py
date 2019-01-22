@@ -9,12 +9,9 @@ import matplotlib.pyplot as plt
 from DenverMap import DenverMap
 
 df = pd.read_csv('MapData.csv')
-
-#df[['GEO_LON', 'GEO_LAT']]
-x = df['GEO_LON']
-y = df['GEO_LAT']
-plt.scatter(x, y)
-plt.show()
+long = df['GEO_LON']
+lat = df['GEO_LAT']
 
 map = DenverMap()
-map.show()
+x, y = map.getMap()(long.tolist(), lat.tolist())
+map.plot(x,y)

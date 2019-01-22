@@ -45,16 +45,24 @@ print("Done.")
 print("Predicting Offense Category by Neighborhood...")
 markov = FOM()
 
-# Train Crime Data
+# Train Crime Datav
 #   Parameters:
 #       DataFrame - Contains REPORTED_DATE, NEIGHBORHOOD_ID, and OFFENSE_CATEGORY_ID
 #       List - Consists of 2 column names for keys and values respectively
+print("Training Data...")
 markov.learn(crimeByNID, ["NEIGHBORHOOD_ID", "OFFENSE_CATEGORY_ID"])
-
+print("Done.")
 # Markov Crime Predicion
 #   Parameters - Neighborhood, Crime
 #   Output - Returns next predicted crime in the given neighborhood
-prediction = markov.predict("cbd", "burglary") # example
+print("Predicting...")
+predictions = {}
+for neighborhood, crimes in markov.getMemory().items():
+    lastCrime = crimes[len(crimes)-1]
+    pred = markov.predict(neighborhood, lastCrime)
+    predictions[neighborhood] = pred
+print("Predicted crimes for each neighborhood:")
+print(predictions)
 print("Done.")
 
 ''' PREDICT NEIGHBORHOOD BY OFFENSE CATEGORY '''

@@ -74,3 +74,6 @@ class FOM:
             except:
                 pass
         return dict
+
+    def getMemory(self):
+        return self.memory
