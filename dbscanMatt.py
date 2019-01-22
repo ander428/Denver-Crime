@@ -28,7 +28,7 @@ plt.xlabel("Arson")
 plt.ylabel("Burglary")
 plt.title("Crime Data")
 
-dbsc = DBSCAN(eps = .4, min_samples = 10).fit(data)
+dbsc = DBSCAN(eps = 1, min_samples = 10).fit(data)
 
 labels = dbsc.labels_
 core_samples = np.zeros_like(labels, dtype = bool)
