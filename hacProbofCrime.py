@@ -2,7 +2,6 @@
 
 import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn import cluster
 import scipy.cluster.hierarchy as shc
 
 prob = pd.read_csv('crimeprob.csv')
@@ -14,4 +13,4 @@ plt.figure(figsize=(12, 8))
 plt.title("Dendrogram")  
 dend = shc.dendrogram(shc.linkage(prob, method='ward'), labels = label)
 plt.figure(figsize=(12, 8))  
-dend = shc.dendrogram(shc.linkage(prob, method='complete'), labels = label)
+dend = shc.dendrogram(shc.linkage(prob, method='complete'), labels = label) 
