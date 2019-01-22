@@ -37,6 +37,7 @@ print(min_lat)
 
 min_lon = subset_df.groupby('NEIGHBORHOOD_ID')['GEO_LAT'].min()[subset_df['NEIGHBORHOOD_ID']]
 
+print(subset_df.NEIGHBORHOOD_ID.unique())
 
 #dictionary = {}
 #for i, row in enumerate(subset_df.iterrows()):
