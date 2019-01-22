@@ -28,7 +28,7 @@ plt.xlabel("Arson")
 plt.ylabel("Burglary")
 plt.title("Crime Data")
 
-dbsc = DBSCAN(eps = .5, min_samples = 10).fit(data)
+dbsc = DBSCAN(eps = .4, min_samples = 10).fit(data)
 
 labels = dbsc.labels_
 core_samples = np.zeros_like(labels, dtype = bool)
@@ -44,6 +44,6 @@ for (label, color) in zip(unique_labels, colors):
     
     xy2 = data[class_member_mask & ~core_samples]
     plt.plot(xy2[:,0],xy2[:,1], 'o', markerfacecolor = color, markersize = 5)
-plt.title("DBSCAN on Wholsesale data")
+plt.title("DBSCAN on Crimes data")
 plt.xlabel("Arson (scaled)")
 plt.ylabel("Burglary (scaled)")
