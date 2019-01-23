@@ -16,22 +16,21 @@ import scipy.cluster.hierarchy as shc
 ##prob = prob.drop(['neighborhood'], axis=1)
 #
 ##set up plot dendogram plot
-#plt.figure(figsize=(12, 8))  
-#plt.title("Dendrogram")  
+#plt.figure(figsize=(12, 8))
+#plt.title("Dendrogram")
 #dend = shc.dendrogram(shc.linkage(prob, method='ward'), labels = label)
-#plt.figure(figsize=(12, 8))  
+#plt.figure(figsize=(12, 8))
 #dend = shc.dendrogram(shc.linkage(prob, method='complete'), labels = label)
 
 #Examines the uniqueness of certain crimes and how they appear together in certain neighborhoods
-prob = pd.read_csv('crimefigs.csv')
+prob = pd.read_csv('./CSVs/crimefigs.csv')
 prob = prob.transpose()
 prob = prob.drop(['neighborhood'])
 label = prob.index
 
 #set up plot dendogram plot
-plt.figure(figsize=(12, 8))  
-plt.title("Dendrogram")  
+plt.figure(figsize=(12, 8))
+plt.title("Dendrogram")
 dend = shc.dendrogram(shc.linkage(prob, method='ward'), labels = label)
-plt.figure(figsize=(12, 8))  
+plt.figure(figsize=(12, 8))
 dend = shc.dendrogram(shc.linkage(prob, method='complete'), labels = label)
-

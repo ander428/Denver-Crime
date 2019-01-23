@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 from DenverMap import DenverMap
 import numpy
 
-df = pd.read_csv('MapData.csv')
+df = pd.read_csv('./CSVs/MapData.csv')
 long = df['GEO_LON']
 lat = df['GEO_LAT']
 

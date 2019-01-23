@@ -15,7 +15,7 @@ from sklearn.cluster import DBSCAN
 from sklearn.preprocessing import StandardScaler
 import pandas as pd
 
-data = pd.read_csv('crimefigs.csv')
+data = pd.read_csv('./CSVs/crimefigs.csv')
 data
 data = data[["arson", "burglary"]]
 data = data.values.astype("float32", copy = False)
@@ -41,7 +41,7 @@ for (label, color) in zip(unique_labels, colors):
     class_member_mask = (labels == label)
     xy = data[class_member_mask & core_samples]
     plt.plot(xy[:,0],xy[:,1], 'o', markerfacecolor = color, markersize = 10)
-    
+
     xy2 = data[class_member_mask & ~core_samples]
     plt.plot(xy2[:,0],xy2[:,1], 'o', markerfacecolor = color, markersize = 5)
 plt.title("DBSCAN on Crimes data")
