@@ -16,12 +16,7 @@ class DenverMap:
         plt.show()
 
     def plot(self, x, y):
-        self.map.readshapefile('./Data/Roads/roads', 'Streets',
-            drawbounds = True, color='grey')
-        self.map.readshapefile('./Data/Neighborhoods/statistical_neighborhoods',
-            'Neighborhoods',drawbounds = True, color='red')
         self.map.plot(x, y, marker="D",color='m')
-        plt.show()
 
     def getMap(self):
         return self.map
