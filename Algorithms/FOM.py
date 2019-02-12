@@ -12,9 +12,12 @@ import pandas as pd
 class FOM:
 
     # Constructor
-    def __init__(self):
-        self.MAX_ROWS = 10000   # Set a limit on how many rows are trained
-        self.memory = {}        # Dictionary to store data
+    def __init__(self, rows = None):
+        if rows == None:
+            self.MAX_ROWS = 400000  # Set default to 400k  
+        else:
+            self.MAX_ROWS = rows    # Set a limit on how many rows are trained
+        self.memory = {}            # Dictionary to store data
 
     # Train train on pandas DataFrame given key and value columns
     def learn(self, dataFrame, columns):
